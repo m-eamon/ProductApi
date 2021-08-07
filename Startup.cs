@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
+using ProductApi.Models;
 
 namespace ProductApi
 {
@@ -28,6 +30,11 @@ namespace ProductApi
         {
 
             services.AddControllers();
+
+            //SQL Server - Docker image
+            services.AddDbContext<ProductContext>(options =>
+                     options.UseSqlServer(Configuration.GetConnectionString("LocalDockerConnection")));        
+        
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProductApi", Version = "v1" });
