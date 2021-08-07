@@ -14,8 +14,16 @@ Add Product and ProductContext models
 
 Scaffold the Products Controller
 
+export PATH=$HOME/.dotnet/tools:$PATH
+
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
 dotnet add package Microsoft.EntityFrameworkCore.Design
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 dotnet tool install -g dotnet-aspnet-codegenerator
 dotnet aspnet-codegenerator controller -name ProductsController -async -api -m Product -dc ProductContext -outDir Controllers
+
+Initial Migration
+dotnet tool install --global dotnet-ef
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update
