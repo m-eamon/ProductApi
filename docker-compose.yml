@@ -1,0 +1,19 @@
+version: "3.2"
+services:
+    app:
+        container_name: products-api
+        build: .
+        ports:
+          - "8080:5001"
+        depends_on: 
+          - db
+    db:
+        container_name: mssql-db
+        build: mssql/.
+        ports:
+          - "1433:1433"
+        environment:    
+          MSSQL_PID: "Developer"
+          MSSQL_USER: "SA"
+          MSSQL_SA_PASSWORD: "Passw0rd"
+          ACCEPT_EULA: "Y"              
