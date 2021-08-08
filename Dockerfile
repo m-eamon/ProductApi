@@ -6,10 +6,12 @@ COPY *.csproj ./
 
 RUN dotnet restore
 
-EXPOSE 8080
+EXPOSE 8085
 
 COPY . ./
 
 RUN dotnet publish -c Release -o out
 
-ENTRYPOINT ["dotnet", "watch", "run"]
+## migrations 
+
+ENTRYPOINT ["dotnet", "watch", "run", "no-restore", "--urls", "https://0.0.0:8085"]

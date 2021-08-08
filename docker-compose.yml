@@ -4,7 +4,7 @@ services:
         container_name: products-api
         build: .
         ports:
-          - "8080:5001"
+          - "5001:8085"
         depends_on: 
           - db
     db:
