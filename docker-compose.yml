@@ -4,16 +4,16 @@ services:
         container_name: products-api
         build: .
         ports:
-          - "5001:8085"
+          - "5006:8085"
         depends_on: 
-          - db
-    db:
+          - mysqldb
+    mysqldb:
         container_name: mssql-db
         build: mssql/.
         ports:
           - "1433:1433"
         environment:    
           MSSQL_PID: "Developer"
-          MSSQL_USER: "SA"
+          MSSQL_USER: "sa"
           MSSQL_SA_PASSWORD: "Passw0rd"
           ACCEPT_EULA: "Y"              
