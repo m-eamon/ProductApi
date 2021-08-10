@@ -9,6 +9,6 @@ do
         break
     else
         echo "waiting for setupdb.sql to complete"
-        sleep 1
+        sleep 2
     fi    
 done

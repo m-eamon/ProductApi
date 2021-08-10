@@ -34,7 +34,7 @@ namespace ProductApi
             //SQL Server - Docker image
             services.AddDbContext<ProductContext>(options =>
                      options.UseSqlServer(Configuration.GetConnectionString("LocalDockerConnection")));        
-        
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProductApi", Version = "v1" });
@@ -42,7 +42,7 @@ namespace ProductApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ProductContext pb)
         {
             if (env.IsDevelopment())
             {
@@ -50,6 +50,9 @@ namespace ProductApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ProductApi v1"));
             }
+
+            // create the ProductsDB database
+            pb.Database.EnsureCreated();
 
             app.UseHttpsRedirection();
 
