@@ -10,6 +10,8 @@ code -r ../Product
 Trust the HTTPS development certificate by running the following command
 dotnet dev-certs https 
 
+LocalDockerConnection
+
 Add Product and ProductContext models
 
 Scaffold the Products Controller
@@ -26,3 +28,7 @@ docker containers....
  How to run..
  
 db EnsureCreated
+
+Seed the database from mssql file...
+
+Call it after db loads...
