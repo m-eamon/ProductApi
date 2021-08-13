@@ -8,7 +8,7 @@ services:
         depends_on: 
           - mysqldb
     mysqldb:
-        container_name: mssql-db
+        container_name: products-db
         build: mssql/.
         ports:
           - "1433:1433"
