@@ -1,3 +1,5 @@
+# Scaffold Controller
+
 ### Product & ProductContext Models
 These Product and ProdctContext classes is used with Entity Framework Core (EF Core) to work with the ProductDB database.
 

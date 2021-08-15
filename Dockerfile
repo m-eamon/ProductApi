@@ -12,6 +12,4 @@ COPY . ./
 
 RUN dotnet publish -c Release -o out
 
-## migrations 
-
 ENTRYPOINT ["dotnet", "watch", "run", "no-restore", "--urls", "https://0.0.0:8085"]
