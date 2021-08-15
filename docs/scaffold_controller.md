@@ -36,8 +36,6 @@ namespace ProductApi.Models
 }
 ```
 
-
-
 ### Add NuGet packages
 ```shell
 dotnet tool install --global dotnet-ef
@@ -61,7 +59,7 @@ dotnet aspnet-codegenerator controller -name ProductItemsController -async -api 
 ```
 
 ### Verify
-ProductsController should now be available.
+ProductsController for CRUD operations will now be available.
 
 
 

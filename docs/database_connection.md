@@ -1,4 +1,6 @@
 # Database connection
+
+### Configuration
 Ensure database connection is setup with the correct context and Docker connection in the <strong>startup.cs</strong> file. 
 
 ```csharp
