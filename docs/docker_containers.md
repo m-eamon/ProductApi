@@ -11,5 +11,5 @@ The <strong>mssql/dockerfile</strong> will build and run the db in a docker cont
 This <strong>docker-compose.yml</strong> file will define and run both containers. To run:
 
 ```shell
-docker-compose up -- build
+docker-compose up --build
 ```
