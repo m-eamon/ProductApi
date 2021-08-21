@@ -6,3 +6,4 @@ Api for Products
     * [Scaffold Controller](./docs/scaffold_controller.md)
     * [Database Connection](./docs/database_connection.md)
     * [Docker Containers](./docs/docker_containers.md)
+    * [Developer Notes](./docs/docker_containers.md)
